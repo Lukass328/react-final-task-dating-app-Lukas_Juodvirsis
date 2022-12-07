@@ -1,0 +1,11 @@
+.likes-photos {
+  height: 700px;
+  width: 800px;
+  border: 1px solid black;
+  margin: auto auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+}

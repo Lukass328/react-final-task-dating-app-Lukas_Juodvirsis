@@ -1,0 +1,71 @@
+.profile-photos {
+  height: 700px;
+  width: 800px;
+  border: 1px solid black;
+  margin: auto auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.upload-window {
+  /* display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  gap: 20px;
+  height: 150px; */
+  position: fixed;
+
+  left: 25%;
+  top: 30%;
+
+  width: 50%;
+
+  border: 1px solid #011627;
+  border-radius: 1em;
+  /* box-shadow: -2px 5px 5px #E71D36; */
+
+  background-color: #FDFFFC;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  color: #011627;
+
+}
+
+.during-popup {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+}
+
+
+/* 
+.popup-content {
+  margin: auto;
+  background: rgb(255, 255, 255);
+  width: 50%;
+  padding: 5px;
+}
+
+.popup-arrow {
+  color: rgb(255, 255, 255);
+}
+
+[role='tooltip'].popup-content {
+  width: 200px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
+}
+
+.popup-overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+[data-popup='tooltip'].popup-overlay {
+  background: transparent;
+} */

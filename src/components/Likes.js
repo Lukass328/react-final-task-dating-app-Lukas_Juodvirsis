@@ -2,14 +2,14 @@ import React, { useContext, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import MainContext from '../context/MainContext'
 import '../css/Likes.css'
-import PhotoSlider from './PhotoSlider'
-import Popup from 'reactjs-popup';
+import PhotoSliderLikes from './PhotoSliderLikes'
+
 import 'reactjs-popup/dist/index.css';
 import { post } from '../plugins/http'
 
 function Likes() {
   const photoRef = useRef()
-  const { user, userLogged } = useContext(MainContext)
+  const { user, userLogged, users } = useContext(MainContext)
 
   const nav = useNavigate()
   const logOut = async () => {
@@ -40,12 +40,12 @@ function Likes() {
   }
   return (
     <div>
-      {user.map((x, i) => <>
+      {users.map((x, i) => <>
         <h1>People </h1>
 
 
         <div className='likes-photos'>
-          <PhotoSlider x={x} i={i} key={i} />
+          <PhotoSliderLikes x={x} i={i} key={i} />
           <button>Dislike</button>
           <button>Like</button>
         </div></>)}

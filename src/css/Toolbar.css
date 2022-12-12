@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 50px;
+  background-color: rgb(32, 31, 31);
+
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  color: aliceblue;
+  gap: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.links {
+  display: flex;
+  gap: 50px;
+
+}
+
+.links a {
+  padding: 10px 10px;
+}
+
+.links a:hover {
+  background-color: rgb(46, 44, 44);
+  border-radius: 5px;
+}

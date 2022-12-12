@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import '../css/Slider.css'
+import '../css/SliderLikes.css'
 import { FaAngleRight, FaAngleLeft } from 'react-icons/fa';
-function PhotoSlider({ user, i }) {
+function PhotoSliderLikes({ user, i }) {
   const [current, setCurrent] = useState(0)
   const [photo, setPhoto] = useState()
   // console.log('photo ===', photo);
@@ -30,7 +30,10 @@ function PhotoSlider({ user, i }) {
             key={i}
           >
             {i === current && (
-              <><div style={{ backgroundImage: `url(${x})` }} alt='image' className='image' /><h1 className='names'>{user.username} {user.age}</h1><h3 className='city'>From {user.city}</h3></>
+              <><div style={{ backgroundImage: `url(${x})` }} alt='image' className='image' />
+                <h1 className='names'>{user.username} {user.age}</h1>
+                <h3 className='city'>From {user.city}</h3>
+              </>
             )}
 
           </div>
@@ -40,4 +43,4 @@ function PhotoSlider({ user, i }) {
   )
 }
 
-export default PhotoSlider
+export default PhotoSliderLikes

@@ -2,15 +2,18 @@
   max-width: 500px;
   margin: 0 auto;
   padding: 20px;
-  background: #fafafa;
+  background: rgb(32, 31, 31);
   border: 1px solid #ccc;
-  margin-top: 50px;
+  margin-top: 150px;
+  border-radius: 10px;
+  box-shadow: 0px 10px 53px 0px rgba(0, 0, 0, 0.3)
 }
 
 
 .register h1 {
   margin: 0 0 20px 0;
   text-align: center;
+  color: aliceblue;
 }
 
 .register input {
@@ -26,12 +29,12 @@
   padding: 15px;
   padding-right: 50px;
   padding-left: 50px;
-  background: #bb1b1b;
+  background: #FD3A73;
   color: #fff;
 }
 
 .register button:hover {
-  background-color: #e62e2e;
+  background-color: #fc185c;
 }
 
 .reg-btn {
@@ -58,6 +61,7 @@
   gap: 10px;
   margin-top: 10px;
   margin-bottom: 10px;
+  color: aliceblue;
 
 }
 
@@ -69,6 +73,7 @@
 .cities {
   display: flex;
   gap: 30px;
+  color: aliceblue;
 
 
 }

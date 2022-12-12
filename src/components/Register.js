@@ -27,7 +27,7 @@ function Register() {
     const res = await post('register', user)
     console.log('res ===', res);
     if (!res.error) {
-      nav('/profile')
+      nav('/login')
     }
     else {
       setErrDiv(res.message)

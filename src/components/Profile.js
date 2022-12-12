@@ -9,6 +9,7 @@ import 'reactjs-popup/dist/index.css';
 
 
 
+
 function Profile() {
   const [open, setOpen] = useState(false);
 
@@ -41,7 +42,7 @@ function Profile() {
         <button onClick={logOut}>Log out</button>
         <button onClick={filter}>Filter</button>
         <div className='profile-photos'>
-          <PhotoSlider x={x} i={i} key={i} />
+          <PhotoSlider user={x} i={i} key={i} />
 
           {/* <div className='upload-window'>
             <img src={x.photos} height='50px' alt="" />
@@ -53,6 +54,7 @@ function Profile() {
             <button onClick={() => setOpen(true)}>UPLOAD PHOTOS</button>
             {open ? <Popup text="Upload" closePopup={() => setOpen(false)} /> : null}
           </div>
+
 
         </div></>)}
 

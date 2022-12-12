@@ -1,4 +1,4 @@
-.slider {
+.sliders {
   position: relative;
   /* height: 100vh; */
   display: flex;
@@ -36,24 +36,4 @@
   z-index: 10;
   cursor: pointer;
   user-select: none;
-}
-
-.slide {
-  /* opacity: 0; */
-  /* transition-duration: 0.1s ease; */
-}
-
-.slide.active {
-  opacity: 1;
-  /* transition-duration: 0.1s; */
-  /* transform: scale(1.08); */
-}
-
-.name {
-  position: absolute;
-
-  bottom: 8px;
-  /* right: 16px; */
-  margin: 10px;
-  color: rgb(156, 45, 45);
 }

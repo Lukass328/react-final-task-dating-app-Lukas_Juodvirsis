@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import '../css/Slider.css'
+import '../css/LikedSliderCards.css'
 import { FaAngleRight, FaAngleLeft } from 'react-icons/fa';
-function PhotoSlider({ user, i }) {
+function LikedSliderCards({ user, i }) {
   const [current, setCurrent] = useState(0)
   const [photo, setPhoto] = useState()
   // console.log('photo ===', photo);
@@ -20,7 +20,7 @@ function PhotoSlider({ user, i }) {
   }
 
   return (
-    <section className='slider'>
+    <section className='sliders'>
       <FaAngleLeft className='left-arrow' onClick={prevSlide} />
       <FaAngleRight className='right-arrow' onClick={nextSlide} />
       {user.photos.map((x, i) => {
@@ -40,4 +40,4 @@ function PhotoSlider({ user, i }) {
   )
 }
 
-export default PhotoSlider
+export default LikedSliderCards

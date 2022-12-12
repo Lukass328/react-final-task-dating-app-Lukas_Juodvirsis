@@ -1,18 +1,30 @@
-import React, { useRef, useState } from 'react'
+import React, { useContext, useRef, useState } from 'react'
+import MainContext from '../context/MainContext'
 import '../css/Filter.css'
+import io from "socket.io-client"
+import { useNavigate } from 'react-router-dom'
 function Filter() {
+
+  const nav = useNavigate()
+  const { userLogged } = useContext(MainContext)
   const [gender, setGender] = useState('')
   const [age, setAge] = useState()
   const cityRef = useRef()
+  const socket = io.connect('http://localhost:5000');
 
   const filterValues = () => {
     const values = {
+      username: userLogged,
       city: cityRef.current.value,
       gender: gender,
-      age: age,
+      maxAge: age,
+      minAge: 18
     }
-    console.log('values ===', values);
+
+    socket.emit('userfilter', values)
+    nav('/main')
   }
+
 
   return (
     <div >
@@ -51,7 +63,7 @@ function Filter() {
 
           </div>
         </div>
-        <button onClick={filterValues}>SUBMIT</button>
+        <button className='filter-btn' onClick={filterValues}>SUBMIT</button>
       </div>
     </div>
   )

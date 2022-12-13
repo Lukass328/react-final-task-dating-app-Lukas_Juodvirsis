@@ -23,6 +23,7 @@ function Filter() {
 
     socket.emit('userfilter', values)
     nav('/main')
+
   }
 
 

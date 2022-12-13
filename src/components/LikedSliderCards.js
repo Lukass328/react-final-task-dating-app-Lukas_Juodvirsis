@@ -1,36 +1,44 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../css/LikedSliderCards.css'
 import { FaAngleRight, FaAngleLeft } from 'react-icons/fa';
-function LikedSliderCards({ user, i }) {
+function LikedSliderCards({ user, i, likes }) {
   const [current, setCurrent] = useState(0)
   const [photo, setPhoto] = useState()
-  // console.log('photo ===', photo);
-  const length = user.photos.length
+  const [length, setLength] = useState()
 
-  const nextSlide = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1);
-  };
+  // const length = user.photos.length
+  // console.log('length ===', length);
+  // useEffect(() => {
+  //   setLength(user.photos.length);
+  // }, [user.photos]);
 
-  const prevSlide = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1);
-  };
+  // const nextSlide = () => {
+  //   setCurrent(current === length - 1 ? 0 : current + 1);
+  // };
 
-  if (!Array.isArray(user.photos) || user.photos.length <= 0) {
-    return null;
-  }
+  // const prevSlide = () => {
+  //   setCurrent(current === 0 ? length - 1 : current - 1);
+  // };
+
+  // if (!Array.isArray(user.photos) || user.photos.length <= 0) {
+  //   return null;
+  // }
+
 
   return (
     <section className='sliders'>
-      <FaAngleLeft className='left-arrow' onClick={prevSlide} />
-      <FaAngleRight className='right-arrow' onClick={nextSlide} />
-      {user.photos.map((x, i) => {
+      {/* <FaAngleLeft className='left-arrow-like' onClick={prevSlide} />
+      <FaAngleRight className='right-arrow-like' onClick={nextSlide} /> */}
+      {likes.map((x, i) => {
         return (
           <div
             className={i === current ? 'slide active' : 'slide'}
             key={i}
+
           >
             {i === current && (
-              <><div style={{ backgroundImage: `url(${x})` }} alt='image' className='image' /><h1 className='names'>{user.username} {user.age}</h1><h3 className='city'>From {user.city}</h3></>
+
+              <><div style={{ backgroundImage: `url(${x.photos})` }} alt='image' className='images' /><h3 className='names-liked'>{x.name}</h3></>
             )}
 
           </div>

@@ -11,17 +11,17 @@ export const Popup = ({ text, closePopup }) => {
       photos: photoRef.current.value,
       username: userLogged,
     }
-    console.log('photo ===', photo);
+
     const res = await post('upload-photo', photo)
-    console.log('res ===', res);
+    window.location.reload();
   }
   return (
     <div className="popup-container">
       <div className="popup-body">
-        <button onClick={closePopup}>Close X</button>
+        <button className="close" onClick={closePopup}>Close X</button>
         <h1>{text}</h1>
         <input ref={photoRef} type="text" placeholder="Add photo" />
-        <button onClick={upload}>Upload</button>
+        <button className="upload-btn" onClick={upload}>Upload</button>
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import MainContext from '../context/MainContext'
 import '../css/Profile.css'
 import PhotoSlider from './PhotoSlider'
+// import Popup from 'reactjs-popup';
 import { Popup } from './PopUp'
 
 import 'reactjs-popup/dist/index.css';
@@ -25,13 +26,13 @@ function Profile() {
     })
     if (res.ok) {
       nav('/')
+      window.location.reload();
+
     } else {
       console.log(res.message)
     }
   }
-  const filter = () => {
-    nav('/filter')
-  }
+
 
 
 
@@ -39,20 +40,16 @@ function Profile() {
     <div>
       {user.map((x, i) => <>
         <h1>Profile </h1>
-        <button onClick={logOut}>Log out</button>
-        <button onClick={filter}>Filter</button>
+        <div className='log' onClick={logOut}>Log out</div>
+        {/* <button onClick={filter}>Filter</button> */}
         <div className='profile-photos'>
           <PhotoSlider user={x} i={i} key={i} />
 
-          {/* <div className='upload-window'>
-            <img src={x.photos} height='50px' alt="" />
-
-            <input ref={photoRef} type="text" placeholder='Add photo' />
-            <button onClick={upload} >Upload</button>
-          </div> */}
           <div>
-            <button onClick={() => setOpen(true)}>UPLOAD PHOTOS</button>
-            {open ? <Popup text="Upload" closePopup={() => setOpen(false)} /> : null}
+            <button className='upload-fotos' onClick={() => setOpen(true)}>UPLOAD PHOTOS</button>
+            {open ? <Popup text="Upload" closePopup={() => setOpen(false)} >
+              <div>asdas</div>
+            </Popup> : null}
           </div>
 
 

@@ -23,11 +23,12 @@ function Register() {
       photos: ['https://img.freepik.com/premium-vector/man-avatar-profile-picture-vector-illustration_268834-541.jpg'],
       likes: [''],
     }
-    console.log('user ===', user);
+
     const res = await post('register', user)
-    console.log('res ===', res);
+
     if (!res.error) {
       nav('/login')
+      window.location.reload();
     }
     else {
       setErrDiv(res.message)

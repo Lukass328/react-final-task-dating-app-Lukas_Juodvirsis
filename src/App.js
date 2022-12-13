@@ -20,9 +20,10 @@ function App() {
   const [user, setUser] = useState([])
   const [filteredUsers, setFilteredUsers] = useState([])
   const [users, setUsers] = useState([])
-  // console.log('sadasd', user[0].photos.length)
+  const [likedUsers, setLikedUsers] = useState([])
 
-  console.log('filteredUsers ===', filteredUsers);
+
+
 
   useEffect(() => {
     socket.on("allusers", (data) => {
@@ -37,11 +38,22 @@ function App() {
 
 
     })
+    socket.on("likedPeople", (data) => {
+      console.log('data ===', data);
+      // setLikedUsers(data)
+
+
+    })
+    socket.on("likesData", (data) => {
+
+      setLikedUsers(data)
+
+
+    })
   }, [])
   useEffect(() => {
     get("auth").then(res => {
 
-      console.log('response', res)
       setIsLoggedIn(res.loggedIn
       )
       setUserLogged(res.user)
@@ -70,6 +82,8 @@ function App() {
     users,
     setUsers,
     filteredUsers,
+    likedUsers,
+    setLikedUsers,
 
 
 

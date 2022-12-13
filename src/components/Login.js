@@ -15,9 +15,10 @@ function Login() {
 
     }
     const res = await post('login', user)
-    console.log('res ===', res);
+
     if (!res.error) {
       nav('/profile')
+      window.location.reload();
     } else {
       setErrDiv(res.message)
     }

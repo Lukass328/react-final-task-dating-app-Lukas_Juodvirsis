@@ -15,14 +15,43 @@
   position: absolute;
   left: 30%;
   right: 30%;
-  bottom: 30%;
-  top: 30%;
+  bottom: 46%;
+  top: 13%;
   text-align: center;
   margin: auto;
   border-radius: 15px;
   border-color: black;
-  background: white;
+  background: rgb(32, 31, 31);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   /* display: flex; */
+  color: aliceblue;
+
+
+}
+
+.close {
+  padding: 5px;
+  margin-top: 5px;
+  color: aliceblue;
+  background-color: #FD3A73;
+  border: 0;
+}
+
+.close:hover {
+
+  background-color: #fc185c;
+}
+
+.upload-btn {
+  margin-left: 10px;
+  padding: 2px 10px;
+  color: aliceblue;
+  background-color: #FD3A73;
+
+}
+
+.upload-btn:hover {
+
+  background-color: #fc185c;
 
 }

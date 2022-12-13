@@ -6,12 +6,16 @@ import { useNavigate } from 'react-router-dom'
 
 import Cards from './Cards';
 import PhotoSliderLikes from './PhotoSliderLikes';
+import LikedSliderCards from './LikedSliderCards';
+
 
 function Main() {
   const nav = useNavigate()
   const { users, user, userLogged } = useContext(MainContext)
   const [liked, setLiked] = useState(true)
-  console.log('users ===', users);
+
+
+
   const goToProfile = () => {
     nav('/profile')
   }
@@ -21,12 +25,16 @@ function Main() {
   const iLiked = () => {
     setLiked(false)
   }
+
   return (
     <div className='main'>
       <div className='user-info'>
         <div className='profile-div'>
           <div className='user-profile'>
-            {user.map((x, i) => <><img src={x.photos[0]} alt="" /><h3>{x.username}</h3></>)}
+            {user.map((x, i) => <><img src={x.photos[0]} alt="" /><h3>{x.username}</h3>
+            </>)}
+
+
 
           </div>
 
@@ -44,16 +52,15 @@ function Main() {
 
 
 
-          {liked ? <> {users.map((x, i) => <div>{x.username} </div>)}
+          {liked ? <> <div>liked </div>
           </>
 
             :
 
             <>
-              <div> I liked</div>
-              <div> I liked</div>
-              <div> I liked</div>
-              <div> I liked</div>
+
+
+              <div>likes</div>
             </>
 
           }

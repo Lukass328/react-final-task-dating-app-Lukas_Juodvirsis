@@ -6,7 +6,7 @@ function PhotoSliderLikes({ user, i }) {
   const [photo, setPhoto] = useState()
   // console.log('photo ===', photo);
   const length = user.photos.length
-
+  console.log('length ===', length);
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
   };
